@@ -19,11 +19,11 @@ public class Territory implements Serializable {
     private long id;
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private List<LatLng> positions;
+    private List<GeoPos> positions;
 
     private TerritoryType territoryType;
 
-    private LatLng center;
+    private GeoPos center;
 
     private String name;
 
@@ -31,22 +31,22 @@ public class Territory implements Serializable {
     private List<Marking> markings;
 
     public Territory() {
-        this(new ArrayList<LatLng>());
+        this(new ArrayList<GeoPos>());
     }
 
-    public Territory(List<LatLng> positions) {
+    public Territory(List<GeoPos> positions) {
         this.positions = positions;
         markings = new ArrayList<Marking>();
     }
 
-    public Territory(long id, TerritoryType territoryType, List<LatLng> positions) {
+    public Territory(long id, TerritoryType territoryType, List<GeoPos> positions) {
         this(positions);
         this.id = id;
         this.territoryType = territoryType;
     }
 
-    public void addAll(LatLng ... latLngs){
-        Collections.addAll(positions, latLngs);
+    public void addAll(GeoPos... geoPos){
+        Collections.addAll(positions, geoPos);
     }
 
     public long getId() {
@@ -57,11 +57,11 @@ public class Territory implements Serializable {
         this.id = id;
     }
 
-    public List<LatLng> getPositions() {
+    public List<GeoPos> getPositions() {
         return positions;
     }
 
-    public void setPositions(List<LatLng> positions) {
+    public void setPositions(List<GeoPos> positions) {
         this.positions = positions;
     }
 
@@ -73,11 +73,11 @@ public class Territory implements Serializable {
         this.territoryType = territoryType;
     }
 
-    public LatLng getCenter() {
+    public GeoPos getCenter() {
         return center;
     }
 
-    public void setCenter(LatLng center) {
+    public void setCenter(GeoPos center) {
         this.center = center;
     }
 

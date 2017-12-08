@@ -22,7 +22,7 @@ public class Player {
     private double urineStrength;
     private double stomach;
 
-    private LatLng lastPosition;
+    private GeoPos lastPosition;
     private Date lastSeen;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, targetEntity=Drinking.class)
@@ -37,7 +37,7 @@ public class Player {
     }
 
 
-    public Player(int id, String username, double blader, double stomach, double urineStrength, int level, LatLng lastPosition, Date lastSeen) {
+    public Player(int id, String username, double blader, double stomach, double urineStrength, int level, GeoPos lastPosition, Date lastSeen) {
         this();
 
         this.id = id;
@@ -98,11 +98,11 @@ public class Player {
         this.stomach = stomach;
     }
 
-    public LatLng getLastPosition() {
+    public GeoPos getLastPosition() {
         return lastPosition;
     }
 
-    public void setLastPosition(LatLng lastPosition) {
+    public void setLastPosition(GeoPos lastPosition) {
         this.lastPosition = lastPosition;
     }
 

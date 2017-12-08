@@ -4,10 +4,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.io.Serializable;
-import java.util.List;
 
 @Entity
-public class LatLng implements Serializable {
+public class GeoPos implements Serializable {
 
 	public final static int PRECISION = 100000;
 
@@ -19,26 +18,26 @@ public class LatLng implements Serializable {
 
 	private double longitude;
 
-	public LatLng() {
+	public GeoPos() {
 	}
 
-	public LatLng(double latitude, double longitude) {
+	public GeoPos(double latitude, double longitude) {
 		this.latitude = latitude;
 		this.longitude = longitude;
 	}
 
 	@Override
 	public boolean equals(Object obj) {
-		if(!(obj instanceof LatLng)) {
+		if(!(obj instanceof GeoPos)) {
 			return false;
 		}
 
-		return equals((LatLng)obj);
+		return equals((GeoPos)obj);
 	}
 
-	public boolean equals(LatLng latLng) {
-		return (int)(getLatitude() * PRECISION) == (int)(latLng.getLatitude() * PRECISION) &&
-				(int)(getLongitude() * PRECISION) == (int)(latLng.getLongitude() * PRECISION);
+	public boolean equals(GeoPos geoPos) {
+		return (int)(getLatitude() * PRECISION) == (int)(geoPos.getLatitude() * PRECISION) &&
+				(int)(getLongitude() * PRECISION) == (int)(geoPos.getLongitude() * PRECISION);
 	}
 
 	@Override

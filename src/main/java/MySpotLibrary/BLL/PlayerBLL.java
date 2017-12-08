@@ -5,7 +5,7 @@ import MySpotLibrary.Entites.Drinking;
 import java.util.Date;
 import java.util.List;
 
-public class Player {
+public class PlayerBLL {
 	// https://www.vetinfo.com/normal-urinary-frequency-in-dogs.html
 	private static final double LITER_PER_POUND = 0.2;
 	private static final double PEE_TIME_SECONDS = 12.0;
