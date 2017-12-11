@@ -129,4 +129,5 @@ public class Player {
     public void setMarks(List<Marking> marks) {
         this.marks = marks;
     }
+
 }
