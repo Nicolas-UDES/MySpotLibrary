@@ -2,6 +2,7 @@ package MySpotLibrary.Entites;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Calendar;
 import java.util.Date;
 
 @Entity
@@ -131,4 +132,12 @@ public class Marking implements Serializable {
 	public void setPlayerId(long playerId) {
 		this.playerId = playerId;
 	}
+
+	public double getPower (){
+	    int year = date.getYear();
+	    int month = date.getMonth();
+	    int day = date.getDay();
+	    double power = year + month*30 + day;
+	    return power + strength * amount;
+    }
 }

@@ -4,9 +4,7 @@ import MySpotLibrary.Entites.Enumerable.TerritoryType;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by Squirrel on 2017-11-20.
@@ -95,5 +93,29 @@ public class Territory implements Serializable {
 
     public void setMarkings(List<Marking> markings) {
         this.markings = markings;
+    }
+
+    public Player getOwner (){
+        Map <String,String> map  = new HashMap<String, String>();
+        double maxPower = markings.get(0).getPower();
+        Marking theMarking = markings.get(0);
+
+        for (Marking m : markings){
+            String key = Long.toString(m.getPlayerId());
+            String power = map.get(key);
+            double newPower;
+
+            if (power == null)
+                newPower = m.getPower();
+            else
+                newPower = Double.parseDouble(power) + m.getPower();
+
+            map.put(key,Double.toString(newPower));
+
+            if (newPower > maxPower)
+                theMarking = m;
+        }
+
+        return theMarking.getPlayer();
     }
 }
