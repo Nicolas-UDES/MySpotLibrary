@@ -16,14 +16,14 @@ public class GeoPos implements Serializable {
 
 	private double latitude;
 
-	private double Longitude;
+	private double longitude;
 
 	public GeoPos() {
 	}
 
-	public GeoPos(double latitude, double Longitude) {
+	public GeoPos(double latitude, double longitude) {
 		this.latitude = latitude;
-		this.Longitude = Longitude;
+		this.longitude = longitude;
 	}
 
 	@Override
@@ -63,10 +63,10 @@ public class GeoPos implements Serializable {
 	}
 
 	public double getLongitude() {
-		return Longitude;
+		return longitude;
 	}
 
 	public void setLongitude(double Longitude) {
-		this.Longitude = Longitude;
+		this.longitude = Longitude;
 	}
 }
