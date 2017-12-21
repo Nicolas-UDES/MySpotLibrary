@@ -101,4 +101,20 @@ public class Territory implements Serializable {
     public void setMarkings(List<Marking> markings) {
         this.markings = markings;
     }
+
+    public Player getOwnedBy() {
+        return ownedBy;
+    }
+
+    public void setOwnedBy(Player ownedBy) {
+        this.ownedBy = ownedBy;
+    }
+
+    public long getOwnedById() {
+        return ownedById;
+    }
+
+    public void setOwnedById(long ownedById) {
+        this.ownedById = ownedById;
+    }
 }
