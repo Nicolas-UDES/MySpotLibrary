@@ -1,6 +1,7 @@
 package MySpotLibrary.Entites;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -8,7 +9,7 @@ import java.util.Date;
  */
 
 @Entity
-public class Drinking {
+public class Drinking implements Serializable {
 
     @Id
     @GeneratedValue
