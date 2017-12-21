@@ -15,7 +15,7 @@ public class Player  implements Serializable {
 
     @Id
     @GeneratedValue
-    private long id;
+    private Long id;
     private String username;
     private int level;
 
@@ -38,7 +38,7 @@ public class Player  implements Serializable {
     }
 
 
-    public Player(int id, String username, double blader, double stomach, double urineStrength, int level, GeoPos lastPosition, Date lastSeen) {
+    public Player(Long id, String username, double blader, double stomach, double urineStrength, int level, GeoPos lastPosition, Date lastSeen) {
         this();
 
         this.id = id;
@@ -51,11 +51,11 @@ public class Player  implements Serializable {
         this.level = level;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

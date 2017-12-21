@@ -14,7 +14,7 @@ public class Territory implements Serializable {
 
     @Id
     @GeneratedValue
-    private long id;
+    private Long id;
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<GeoPos> positions;
@@ -30,7 +30,7 @@ public class Territory implements Serializable {
     private Player ownedBy;
 
     @JoinColumn(name = "ownedBy")
-    private long ownedById;
+    private Long ownedById;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Marking> markings;
@@ -44,7 +44,7 @@ public class Territory implements Serializable {
         markings = new ArrayList<Marking>();
     }
 
-    public Territory(long id, TerritoryType territoryType, List<GeoPos> positions) {
+    public Territory(Long id, TerritoryType territoryType, List<GeoPos> positions) {
         this(positions);
         this.id = id;
         this.territoryType = territoryType;
@@ -54,11 +54,11 @@ public class Territory implements Serializable {
         Collections.addAll(positions, geoPos);
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -110,11 +110,11 @@ public class Territory implements Serializable {
         this.ownedBy = ownedBy;
     }
 
-    public long getOwnedById() {
+    public Long getOwnedById() {
         return ownedById;
     }
 
-    public void setOwnedById(long ownedById) {
+    public void setOwnedById(Long ownedById) {
         this.ownedById = ownedById;
     }
 }

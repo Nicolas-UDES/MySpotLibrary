@@ -10,7 +10,7 @@ public class Marking implements Serializable {
 
 	@Id
 	@GeneratedValue
-	private long id;
+	private Long id;
 
 	private Date date;
 
@@ -27,19 +27,19 @@ public class Marking implements Serializable {
 	private Territory location;
 
 	@JoinColumn(name = "location")
-	private long locationId;
+	private Long locationId;
 
 	@JoinColumn(name = "player")
 	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private Player player;
 
 	@JoinColumn(name = "player")
-	private long playerId;
+	private Long playerId;
 
 	public Marking() {
 	}
 
-	public Marking(int id, Date date, double amount, double strength, Territory location, Player player) {
+	public Marking(Long id, Date date, double amount, double strength, Territory location, Player player) {
 		this.id = id;
 		this.date = date;
 		this.amount = amount;
@@ -53,11 +53,11 @@ public class Marking implements Serializable {
 		emptied = false;
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -117,19 +117,19 @@ public class Marking implements Serializable {
 		this.emptied = emptied;
 	}
 
-	public long getLocationId() {
+	public Long getLocationId() {
 		return locationId;
 	}
 
-	public void setLocationId(long locationId) {
+	public void setLocationId(Long locationId) {
 		this.locationId = locationId;
 	}
 
-	public long getPlayerId() {
+	public Long getPlayerId() {
 		return playerId;
 	}
 
-	public void setPlayerId(long playerId) {
+	public void setPlayerId(Long playerId) {
 		this.playerId = playerId;
 	}
 }

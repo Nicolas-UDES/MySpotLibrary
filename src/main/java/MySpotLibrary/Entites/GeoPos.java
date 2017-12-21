@@ -12,18 +12,18 @@ public class GeoPos implements Serializable {
 
 	@Id
 	@GeneratedValue
-	private long id;
+	private Long id;
 
 	private double latitude;
 
-	private double longitude;
+	private double Longitude;
 
 	public GeoPos() {
 	}
 
-	public GeoPos(double latitude, double longitude) {
+	public GeoPos(double latitude, double Longitude) {
 		this.latitude = latitude;
-		this.longitude = longitude;
+		this.Longitude = Longitude;
 	}
 
 	@Override
@@ -46,11 +46,11 @@ public class GeoPos implements Serializable {
 				new Integer((int) (getLongitude() * PRECISION)).hashCode();
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -63,10 +63,10 @@ public class GeoPos implements Serializable {
 	}
 
 	public double getLongitude() {
-		return longitude;
+		return Longitude;
 	}
 
-	public void setLongitude(double longitude) {
-		this.longitude = longitude;
+	public void setLongitude(double Longitude) {
+		this.Longitude = Longitude;
 	}
 }
