@@ -4,7 +4,7 @@ import MySpotLibrary.Entites.GeoPos;
 
 import java.util.List;
 
-public class LatLngBLL {
+public class GeoPosBLL {
 
 	public static double distance(GeoPos geoPos1, GeoPos geoPos2) {
 		double earthRadius = 3958.75;
