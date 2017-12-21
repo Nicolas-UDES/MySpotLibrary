@@ -13,7 +13,7 @@ public class Drinking implements Serializable {
 
     @Id
     @GeneratedValue
-    private long id;
+    private Long id;
 
     private double amount;
 
@@ -28,19 +28,19 @@ public class Drinking implements Serializable {
     private Territory location;
 
     @JoinColumn(name = "location")
-    private long locationId;
+    private Long locationId;
 
     @JoinColumn(name = "player")
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Player player;
 
     @JoinColumn(name = "player")
-    private long playerId;
+    private Long playerId;
 
     public Drinking() {
     }
 
-    public Drinking(int id, double amount, Date date, Territory location, Player player) {
+    public Drinking(Long id, double amount, Date date, Territory location, Player player) {
         this.id = id;
         this.amount = amount;
         this.date = date;
@@ -52,11 +52,11 @@ public class Drinking implements Serializable {
         this.emptied = false;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -108,19 +108,19 @@ public class Drinking implements Serializable {
         this.emptied = emptied;
     }
 
-    public long getLocationId() {
+    public Long getLocationId() {
         return locationId;
     }
 
-    public void setLocationId(long locationId) {
+    public void setLocationId(Long locationId) {
         this.locationId = locationId;
     }
 
-    public long getPlayerId() {
+    public Long getPlayerId() {
         return playerId;
     }
 
-    public void setPlayerId(long playerId) {
+    public void setPlayerId(Long playerId) {
         this.playerId = playerId;
     }
 }

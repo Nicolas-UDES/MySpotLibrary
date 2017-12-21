@@ -20,7 +20,7 @@ public class MarkingBLL {
 	}
 
 	public static double getPower(Marking marking){
-		long timeDif = new Date().getTime() - marking.getDate().getTime();
+		Long timeDif = new Date().getTime() - marking.getDate().getTime();
 		return (1 / timeDif) * marking.getStrength() * marking.getAmount();
 	}
 
