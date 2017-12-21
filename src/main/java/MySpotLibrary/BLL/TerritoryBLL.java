@@ -6,12 +6,11 @@ import MySpotLibrary.Entites.Territory;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Optional;
 
 public class TerritoryBLL {
 
 	public static Player oldGetOwner (Territory territory){
-		Map<Long,Double> map  = new HashMap<Long, Double>();
+		Map<Long,Double> map  = new HashMap<>();
 		Marking theMarking = territory.getMarkings().get(0);
 		double maxPower = MarkingBLL.getPower(theMarking);
 
@@ -35,7 +34,24 @@ public class TerritoryBLL {
 	}
 
 	public static Long getOwner(Territory territory) {
-		Optional<Marking> max = territory.getMarkings().stream().reduce(MarkingBLL::max);
-		return max.isPresent() ? max.get().getPlayerId() : null;
+		Map<Long, Double> powerByUser = new HashMap<>();
+		Marking maxMarking = null;
+		double maxPower = Double.MIN_VALUE;
+
+		for (Marking m : territory.getMarkings()){
+			double power = MarkingBLL.getPower(m);
+
+			if(powerByUser.containsKey(m.getPlayerId())) {
+				power += powerByUser.get(m.getPlayerId());
+			}
+			
+			powerByUser.put(m.getPlayerId(), power);
+			if(maxPower < power) {
+				maxPower = power;
+				maxMarking = m;
+			}
+		}
+
+		return maxMarking != null ? maxMarking.getPlayerId() : null;
 	}
 }
