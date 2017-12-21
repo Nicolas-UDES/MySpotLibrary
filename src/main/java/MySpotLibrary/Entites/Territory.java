@@ -25,6 +25,13 @@ public class Territory implements Serializable {
 
     private String name;
 
+    @JoinColumn(name = "ownedBy")
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Player ownedBy;
+
+    @JoinColumn(name = "ownedBy")
+    private long ownedById;
+
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Marking> markings;
 

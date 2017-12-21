@@ -44,7 +44,7 @@ public class TerritoryBLL {
 			if(powerByUser.containsKey(m.getPlayerId())) {
 				power += powerByUser.get(m.getPlayerId());
 			}
-			
+
 			powerByUser.put(m.getPlayerId(), power);
 			if(maxPower < power) {
 				maxPower = power;
