@@ -27,7 +27,8 @@ public class PlayerBLL {
 
 		Liquids liquids = new Liquids();
 		liquids.stomach = 0.0; // ml
-		liquids.blader = player.getBlader(); // ml
+		//liquids.blader = player.getBlader(); // ml
+		liquids.blader = 0.0; // ml
 
 		for (Drinking drinking : drinkings) {
 			if (drinking.isEmptied()) {
